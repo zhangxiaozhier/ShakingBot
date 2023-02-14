@@ -2,7 +2,7 @@
 
 Kinect v2 based data collection code
 
-![KinectV2](.\assets\KinectV2.png)
+![KinectV2](./assets/KinectV2.png)
 
 # Installation
 Requirements
