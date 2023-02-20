@@ -1,2 +1,2 @@
-# Manipulating-the-bag
+# ShakingBot
 Manipulating the bag
