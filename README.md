@@ -41,16 +41,19 @@ Kinect v2 based data collection code
 
 ![KinectV2](./assets/KinectV2.png)
 </div>
+
 ## Explanation
 - The folder【get_rgb_depth】is used to get the raw data of Kinect V2, RGB image size is 1920×1080,Depth image size of 512×424.
 - Since RGB images and depth images have different resolutions, they need to be aligned.The folder【colorized_depth】is used to align images.
 - 【final_datasets】is used to processing of images to target resolution,Generate .png and .npy files.
 - 【all_tools】Includes hardware kit for matlab to connect to Kinect V2.
+
 ## Installation
 Requirements
 * Ubuntu 18.04
 * Matlab R2020a
 * Kinect V2
+
 ## Show Datasets
 <div align=center>
 
