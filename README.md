@@ -28,7 +28,7 @@ It has been tested on machines with Nvidia GeForce RTX 2080 Ti.
 - 1 [Data Collection](#data-collection)
 - 2 [Get Datasets](#get-datasets)
 - 3 [Network Training](#network-training)
-  - 3.1 [Python Dependencies](#python-dependencies)
+  - 3.1 [Installation and Code Usage](#installation-and-code-usage)
   - 3.2 [Train ShakingBot](#train-shakingbot)
   - 3.3 [Evaluate ShakingBot](#evaluate-shakingbot)
 
@@ -37,13 +37,52 @@ It has been tested on machines with Nvidia GeForce RTX 2080 Ti.
 # Get Datasets
 
 # Network Training
-## Python Dependencies
-Make a new virtualenv. For example：
-```
-conda create -n shakingbot python=3.6 -y
-```
+## Installation and Code Usage
+1. Make a new virtualenv or conda env. For example, if you're using conda envs, run this to make and then activate the environment:
+    ```
+    conda create -n shakingbot python=3.6 -y
+    conda activate shakingbot
+    ```
+2. Run pip install -r requirements.txt to install dependencies.
+    ```
+    cd network_training
+    pip install -r requirements.txt
+    ```
 
-## Train ShakingBot
+## Train Region Perception Model
+1. In the repo's root, get rgb and depth map
+
+2. In the `configs` folder modify `segmentation.json`
+
+3. Train Region Perception model
+    ```
+        python train.py
+    ```
 
 
-## Evaluate ShakingBot
+## Evaluate Region Perception Model
+<img style="left-margin:10px; right-margin:10px;" src="assets/model_prediction.png">
+
+
+<center class="half">
+    <img src="assets/loss.png" >
+    <img src="assets/meanIOU.png">
+</center>
+
+
+
+
+
+1. In the repo's root, download the [model weights](https://drive.google.com/file/d/1-BuhIfmZCCvlW4gIxxTCj5XPGdFebea6/view?usp=sharing)
+
+
+2. Then validate the model from scratch with
+    ```
+    python visualize.py
+    ```
+3.  Training details can be viewed in the bag
+    ```
+    cd network_training
+    tensorboard --logdir train_runs/
+    ```
+
