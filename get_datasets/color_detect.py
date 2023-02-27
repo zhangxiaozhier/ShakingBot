@@ -149,10 +149,11 @@ for i in range(len(jpgs)):#[]range(1):#len(jpgs)):
 	#cv2.imshow('labels_orange', labels_orange.astype(np.uint8))
 
 #输出到测试文件
-	# cv2.imwrite('./test_color/img_red.png', (img_rgb*labels_red[:,:,None]).astype(np.uint8))
-	# cv2.imwrite('./test_color/img_green.png',(img_rgb*labels_green[:,:,None]).astype(np.uint8))
-	# cv2.imwrite('./test_color/img_yellow.png',(img_rgb*labels_yellow[:,:,None]).astype(np.uint8))
-	# cv2.imwrite('./test_color/img_rgb.png',(img_rgb).astype(np.uint8))
+	cv2.imwrite('./test_color/img_red.png', (img_rgb*labels_red[:,:,None]).astype(np.uint8))
+	cv2.imwrite('./test_color/img_green.png',(img_rgb*labels_green[:,:,None]).astype(np.uint8))
+	cv2.imwrite('./test_color/img_white.png',(img_rgb*labels_white[:,:,None]).astype(np.uint8))
+	cv2.imwrite('./test_color/img_rgb.png',(img_rgb).astype(np.uint8))
+ 	# cv2.imwrite('./test_color/img_white.png',(img_rgb*labels_yellow[:,:,None]).astype(np.uint8))
 
 
 # 根据RGB图和npy文件得到红色标签信息

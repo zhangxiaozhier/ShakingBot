@@ -164,7 +164,6 @@ class TrainSeg(BaseTrain):
             self.tboard(self.train_writer, names, values, epoch)
             print("summary writer add train loss: " + str(np.nanmean(losses)))
             print("Finish epoch {}, time elapsed {}".format(epoch, time.time() - ts))
-            # print('loss:{} , map:{} , meanIOU:{} , mean_auc:{}'.format(str(values[0]),str(values[1]),str(values[2]),str(values[3])))
 
             if epoch % 20 == 0:
                 if self.datasize == None or self.datasize > 8:

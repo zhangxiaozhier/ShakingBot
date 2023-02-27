@@ -27,7 +27,7 @@ class Visualizer:
         depth = np.load(os.path.join(self.datapath, "%s_depth.npy" % i))
 #         variance = np.load(os.path.join(self.datapath, "%s_variance.npy" % i))
         green = Image.open(os.path.join(self.datapath, "%s_labels_green.png" % i))
-        yellow = Image.open(os.path.join(self.datapath, "%s_labels_yellow.png" % i))
+        yellow = Image.open(os.path.join(self.datapath, "%s_labels_white.png" % i))
         red = Image.open(os.path.join(self.datapath, "%s_labels_red.png" % i))
         seg = np.stack([red, yellow, green], axis=-1)
         im_height, im_width, _ = seg.shape
@@ -146,7 +146,7 @@ class Visualizer:
         depth[np.isnan(depth)] = max_d
         
         green = Image.open(os.path.join(self.datapath, "%s_labels_green.png" % i))
-        yellow = Image.open(os.path.join(self.datapath, "%s_labels_yellow.png" % i))
+        yellow = Image.open(os.path.join(self.datapath, "%s_labels_white.png" % i))
         red = Image.open(os.path.join(self.datapath, "%s_labels_red.png" % i))
         
         im_gt = np.stack([red, yellow, green], axis=-1)
@@ -186,103 +186,13 @@ class Visualizer:
         plt.axis("off")
         plt.show()
         
-    
-    def real_test(self, i=None, model=None):
-        rgb = Image.open(os.path.join(self.datapath, "rgb_%s.png" % i))
-        depth = np.load(os.path.join(self.datapath, "%s_depth.npy" % i))    
-        max_d = np.nanmax(depth)
-        depth[np.isnan(depth)] = max_d
-        
-        out = model.evaluate(depth).squeeze()
-        seg_pred = out[:, :, :3]
-
-        seg_pred_th = deepcopy(seg_pred)
-        seg_pred_th[seg_pred_th < 0.8] = 0.0
-        
-        plt.figure(dpi=300)
-        plt.subplot(131)
-        plt.title("rgb")
-        plt.imshow(rgb)
-        plt.axis("off")
-        
-        # plt.subplot(142)
-        # plt.title("gt seg")
-        # plt.imshow(rgb)
-        # plt.axis("off")
-        
-        plt.subplot(132)
-        plt.title("model raw")
-        plt.axis("off")
-        plt.imshow(seg_pred)
-        
-        plt.subplot(133)
-        plt.title("model thresh")
-        plt.imshow(seg_pred_th)
-    #         plt.tight_layout()
-        plt.axis("off")
-        plt.show()
-        
-    def var_output(self, i=None, model=None):
-        rgb = Image.open(os.path.join(self.datapath, "rgb_%d.png" % i))
-        depth = np.load(os.path.join(self.datapath, "%d_depth.npy" % i))
-        max_d = np.nanmax(depth)
-        depth[np.isnan(depth)] = max_d
-        
-        yellow = Image.open(os.path.join(self.datapath, "%d_labels_yellow.png" % i))
-        yellow_npy = np.asarray(yellow)
-        mask = np.zeros_like(yellow_npy, dtype=np.float32)
-        mask[yellow_npy > 254] = 1.0
-        
-#         print(os.path.join(self.datapath, "%s_inverse_variance.npy" % i))
-        gt_map = np.load(os.path.join(self.datapath, "%d_inverse_variance.npy" % i)).astype(np.float32)
-        gt_map[yellow_npy < 255] = 0.0
-        print(os.path.join(self.datapath, "%d_inverse_variance.npy" % i))
-        
-        var_pred = model.evaluate(depth).squeeze()
-        var_pred_masked = deepcopy(var_pred)
-        var_pred_masked *= mask
-        
-        plt.figure(dpi=300)
-        plt.subplot(141)
-        plt.title("rgb")
-        plt.imshow(rgb)
-        plt.axis("off")
-        plt.subplot(142)
-        plt.title("gt invvar")
-#         plt.imshow(gt_map, vmin=0.0, vmax=1.0)
-        plt.imshow(gt_map)
-#         plt.colorbar(fraction=0.046, pad=0.04)
-        plt.axis("off")
-        plt.subplot(143)
-        plt.title("model raw")
-        plt.axis("off")
-        plt.imshow(var_pred, vmin=0.0, vmax=1.0)
-#         plt.colorbar()
-        plt.subplot(144)
-        plt.title("model masked")
-        plt.imshow(var_pred_masked, vmin=0.0, vmax=1.0)
-        plt.colorbar(fraction=0.046, pad=0.04)
-#         plt.tight_layout()
-        plt.axis("off")
-        plt.show()
-        
-        
         
         
 model_id = 1997
-epoch = 240
-# pretrained_model = "/home/heruhan/zhangxiaozhi/AllVScodeProjects/bag_unet/network_training/tmp/train_runs/%d/chkpnts/%d_epoch%d" % (model_id, model_id, epoch)
+epoch = 250
 pretrained_model = "/home/xss/zhangxiaozhi/VscodeProjects/shakingbot/network_training/train_runs/%d/chkpnts/%d_epoch%d" % (model_id, model_id, epoch)
 datapath = "/home/xss/zhangxiaozhi/VscodeProjects/shakingbot/network_training/data_studio_painted_bag/camera_3"
-# datapath = "/home/heruhan/zhangxiaozhi/AllVScodeProjects/bag_unet/network_training/real_test"
-# t1 = Run(model_path=pretrained_model, n_features=1)
-# v1 = Visualizer(datapath)
-# v1.var_output(i=0, model=t1)
-# v1.sample_dataset()
-
-
 t1= Run(model_path=pretrained_model, n_features=3)
 v1 = Visualizer(datapath)
-# v1.seg_output(i=3000, model=t1)
-v1.real_test(i=0, model=t1)
-# v1.outer_inner_corresp(i=0)
+v1.seg_output(i=0, model=t1)
+

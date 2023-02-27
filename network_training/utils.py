@@ -83,15 +83,6 @@ def print_gradients():
             print(m.bias.grad)
             # print(l.weight.grad)
 
-# def weights_init(model):
-#     for m in model.modules():
-#         if isinstance(m,nn.Conv2d) or isinstance(m,nn.ConvTranspose2d):
-#             nn.init.xavier_normal_(m.weight.data)
-#             # nn.init.kaiming_normal_(m.weight.data)
-#             m.bias.data.fill_(0)
-#         elif isinstance(m,nn.Linear):
-#             m.weight.data.normal_()
-
 class unetConv2(nn.Module):
     def __init__(self, in_size, out_size, is_batchnorm):
         super(unetConv2, self).__init__()

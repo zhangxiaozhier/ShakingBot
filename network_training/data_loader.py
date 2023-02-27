@@ -68,7 +68,7 @@ class TowelDataset(Dataset):
             sample = {'rgb': img_rgb, 'X': img_depth}
         else:
             corners_label = Image.open(os.path.join(self.root_dir, imidx+'_labels_red.png'))
-            edges_label = Image.open(os.path.join(self.root_dir, imidx+'_labels_yellow.png'))
+            edges_label = Image.open(os.path.join(self.root_dir, imidx+'_labels_white.png'))
             inner_edges_label = Image.open(os.path.join(self.root_dir, imidx+'_labels_green.png'))
 
             if self.use_transform:
