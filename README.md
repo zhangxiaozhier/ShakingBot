@@ -73,6 +73,7 @@ align_rgb(512×424):
 <div align=center>
 
 processed_rgb(243×255):
+
 ![processed_rgb](./assets/processed_rgb.png)
 </div>
 
