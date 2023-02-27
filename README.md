@@ -64,13 +64,9 @@ It has been tested on machines with Nvidia GeForce RTX 2080 Ti.
 <img style="left-margin:10px; right-margin:10px;" src="assets/model_prediction.png">
 
 
-<center class="half">
-<figure>
-    <img src="assets/loss.png" >
-    <img src="assets/meanIOU.png">
-</figure>
-</center>
-
+<div align=center>
+<img src="assets/loss.png" ><img src="assets/loss.png" >
+</div>
 
 
 
