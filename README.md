@@ -65,8 +65,10 @@ It has been tested on machines with Nvidia GeForce RTX 2080 Ti.
 
 
 <center class="half">
+<figure>
     <img src="assets/loss.png" >
     <img src="assets/meanIOU.png">
+</figure>
 </center>
 
 
