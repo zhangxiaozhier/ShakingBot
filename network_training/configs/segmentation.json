@@ -1,0 +1,17 @@
+{
+    "n_feature": 3,
+    "n_class": 3,
+    "transform": true,
+    "lr": 1e-3,
+    "momentum": 0,
+    "w_decay": 0,
+    "step_size": 30,
+    "gamma": 0.5,
+    "datasize": 36,   
+    "runspath": "/home/xss/zhangxiaozhi/VscodeProjects/shakingbot/network_training/train_runs",
+    "datapath": "/home/xss/zhangxiaozhi/VscodeProjects/shakingbot/network_training/data_studio_painted_bag/camera_3",
+    "batch_size": 8,
+    "epochs": 250,
+    "/**/": 17766
+
+}

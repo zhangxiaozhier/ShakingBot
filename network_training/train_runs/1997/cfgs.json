@@ -1,0 +1,15 @@
+{
+  "batch_size": 32,
+  "datapath": "/home/heruhan/zhangxiaozhi/AllVScodeProjects/bag_unet/network_training/data_studio_painted_bag/camera_3",
+  "datasize": 17766,
+  "epochs": 250,
+  "gamma": 0.5,
+  "lr": 0.001,
+  "momentum": 0,
+  "n_class": 3,
+  "n_feature": 3,
+  "runspath": "/home/heruhan/zhangxiaozhi/AllVScodeProjects/bag_unet/network_training/train_runs",
+  "step_size": 30,
+  "transform": true,
+  "w_decay": 0
+}

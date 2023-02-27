@@ -1,0 +1,12 @@
+numpy==1.19.5
+opencv-python==4.5.1.48
+scikit-image==0.17.2
+scikit-learn==0.24.2
+matplotlib==3.3.4
+pillow==8.4.0
+tensorboardX
+tqdm
+tensorboard==2.10.1
+# torch
+# torchvision
+# conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=10.2 -c pytorch
