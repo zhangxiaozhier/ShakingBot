@@ -26,15 +26,65 @@ It has been tested on machines with Nvidia GeForce RTX 2080 Ti.
 
 # Table of Contents
 - 1 [Data Collection](#data-collection)
+    - 1.1 [Explanation](#explanation)
+    - 1.2 [Installation](#installation)
+    - 1.3 [Show Datasets](#show-datasets)
 - 2 [Get Datasets](#get-datasets)
+    - 2.1 [Explanation](#explanation)
 - 3 [Network Training](#network-training)
   - 3.1 [Installation and Code Usage](#installation-and-code-usage)
   - 3.2 [Train ShakingBot](#train-shakingbot)
   - 3.3 [Evaluate ShakingBot](#evaluate-shakingbot)
 
 # Data Collection
+## Explanation
+- The folder【get_rgb_depth】is used to get the raw data of Kinect V2, RGB image size is 1920×1080,Depth image size of 512×424.
+- Since RGB images and depth images have different resolutions, they need to be aligned.The folder【colorized_depth】is used to align images.
+- 【final_datasets】is used to processing of images to target resolution,Generate .png and .npy files.
+- 【all_tools】Includes hardware kit for matlab to connect to Kinect V2.
+## Installation
+Requirements
+* Windows 10
+* Matlab R2020a
+* Kinect V2
+## Show Datasets
+<div align=center>
+
+raw_rgb(1920×1080):
+
+  ![raw_rgb](./assets/raw_rgb.jpg)
+
+raw_depth(512×424):
+
+  ![show_depth](./assets/show_depth.png)
+
+align_rgb(512×424):
+
+  ![align_rgb](./assets/align_rgb.jpg)
+</div>
+
 
 # Get Datasets
+1. preprocess the images collected in kinect v2
+    ```
+    cd get_datasets
+    python get_rgb_npy.py
+    ```
+<div align=center>
+
+processed_rgb(243×255):
+![processed_rgb](./assets/processed_rgb.png)
+</div>
+
+2. get datasets label
+    ```
+    python color_dectect.py
+    ```
+<div align=center>
+<img src="assets/labels/labels_red.png" >
+<img src="assets/labels/labels_green.png" >
+<img src="assets/labels/labels_white.png" >
+</div>
 
 # Network Training
 ## Installation and Code Usage
@@ -65,7 +115,8 @@ It has been tested on machines with Nvidia GeForce RTX 2080 Ti.
 
 
 <div align=center>
-<img src="assets/loss.png" ><img src="assets/loss.png" >
+<img src="assets/loss.png" >
+<img src="assets/meanIOU.png" >
 </div>
 
 
