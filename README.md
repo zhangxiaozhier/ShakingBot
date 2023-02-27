@@ -3,6 +3,7 @@
 <div style="text-align: center;">
 
 [Gu NingQuan](https://github.com/happydog-gu), [Zhang ZhiZhong](https://github.com/zhangxiaozhier)
+
 [Wuhan Textile University](https://www.wtu.edu.cn/)
 </div>
 
