@@ -119,7 +119,6 @@ processed_rgb(243×255):
 
 
 ## Evaluate Region Perception Model
-<img style="left-margin:10px; right-margin:10px;" src="assets/model_prediction.png">
 
 
 <div align=center>
