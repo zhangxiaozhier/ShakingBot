@@ -2,7 +2,7 @@
 
 <div style="text-align: center;">
 
-[Gu NingQuan](https://github.com/happydog-gu), [Zhang ZhiZhong](https://github.com/zhangxiaozhier)
+[Gu Ningquan](https://github.com/happydog-gu), [Zhang Zhizhong](https://github.com/zhangxiaozhier)
 
 Wuhan Textile University
 </div>
