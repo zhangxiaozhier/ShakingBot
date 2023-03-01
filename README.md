@@ -72,7 +72,7 @@ align_rgb(512×424):
 
 
 # Get Datasets
-1. preprocess the images collected in kinect v2
+1. Preprocess the images collected in kinect v2
     ```
     cd get_datasets
     python get_rgb_npy.py
@@ -84,7 +84,8 @@ processed_rgb(243×255):
 ![processed_rgb](./assets/processed_rgb.png)
 </div>
 
-2. get datasets label
+2. Get datasets label
+The paint color can be changed into others according to the pattern color of the bag, Here is the color of the paint in one of the bags.
     ```
     python color_dectect.py
     ```
