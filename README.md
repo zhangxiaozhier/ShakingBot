@@ -4,7 +4,7 @@
 
 [Gu Ningquan](https://github.com/happydog-gu), [Zhang Zhizhong](https://github.com/zhangxiaozhier)
 
-Wuhan Textile University,Wu Han,Hu Bei,China
+Wuhan Textile University, Wu Han, Hu Bei, China
 </div>
 
 <img style="left-margin:50px; right-margin:50px;" src="assets/shakingbot.jpg">
