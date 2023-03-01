@@ -122,8 +122,8 @@ processed_rgb(243×255):
 
 
 <div align=center>
-<img src="assets/loss.png" >
-<img src="assets/meanIOU.png" >
+<img src="assets/loss.png" style="zoom:30%;" >
+<img src="assets/meanIOU.png" style="zoom:30%;" >
 </div>
 
 
