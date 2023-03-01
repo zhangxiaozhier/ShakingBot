@@ -85,7 +85,8 @@ processed_rgb(243×255):
 </div>
 
 2. Get datasets label
-The paint color can be changed into others according to the pattern color of the bag, Here is the color of the paint in one of the bags.
+
+    The paint color can be changed into others according to the pattern color of the bag, Here is the color of the paint in one of the bags.
     ```
     python color_dectect.py
     ```
